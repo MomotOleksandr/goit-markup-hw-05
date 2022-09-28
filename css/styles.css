@@ -15,6 +15,7 @@
     --overlaycolor: rgba(47, 48, 58, 0.4);
     --socialicon-color: #AFB1B8;
     --socialicon-specialcolor: rgba(255, 255, 255, 0.1);
+    --underimg-backgroundcolor: #C4C4C4;
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -78,7 +79,7 @@ div.container.main-nav {
     padding-bottom: 32px;
 }
 .contact-item {
-    display: block;
+    display: flex;
     padding-top: 32px;
     padding-bottom: 32px;
     font-weight: 500;
@@ -113,6 +114,7 @@ div.container.main-nav {
 }
 .svg-icon {
     margin-right: 10px;
+    fill: currentColor;
 }
 .lettermail {
     height: 12px;
@@ -133,11 +135,10 @@ img {
     margin-right: auto;
 }
 .herobox {
-    max-height: 600px;
     max-width: 1600px;
     margin-left: auto;
     margin-right: auto;
-    background-color: var(--special-backgroundcolor);
+    background-color: var(--underimg-backgroundcolor);
     text-align: center;
     padding-top: 200px;
     padding-bottom: 200px;
@@ -289,11 +290,14 @@ button {
 .advantages-item:not(:last-child) {
     margin-right: 30px;
 }
+.advantages-item {
+    width: 270px;
+}
 .advantages-items {
 
 }
 div.adv-with-titles {
-    width: 270px;
+    
 }
 .advantages-place-icon {
     display: flex;
@@ -305,10 +309,7 @@ div.adv-with-titles {
     height: 120px;
 }
 .advantages-icon {
-    margin: 25px 100px;
-    width: 70px;
-    height: 70px;
-
+    fill: var(--primary-textcolor);
 }
 .advantages-title {
     margin-top: 0;
@@ -389,6 +390,7 @@ div.adv-with-titles {
     width: 44px;
     height: 44px;
     border-radius: 50%;
+    fill: var(--socialicon-color);
 }
 .social-a:hover,
 .social-a:focus {
@@ -406,9 +408,11 @@ div.adv-with-titles {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 167px;
+    width: 167px; 
+    height: 89px;
     border: 1px solid var(--socialicon-color);
     border-radius: 4px;
+    fill: var(--socialicon-color);
 }
 .clients-a:hover,
 .clients-a:focus {
@@ -416,10 +420,7 @@ div.adv-with-titles {
     fill: var(--special-color);
 }
 .clients-icon {
-    width: 106px;
-    height: 60px;
-    background-size: contain;
-    padding: 16px 0;
+
 }
 .clients-li:not(:last-child) {
     margin-right: 30px;
@@ -431,14 +432,14 @@ div.adv-with-titles {
 .manywraps {
     flex-wrap: wrap;
 }
-.section-item:hover,
-.section-item:focus {
-    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
-}
 .works-with-titles {
+    display: block;
     text-decoration: none;
     color: var(--primary-textcolor);
-    
+}
+.works-with-titles:hover,
+.works-with-titles:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
 .titles-under-works {
     padding: 20px 24px;
