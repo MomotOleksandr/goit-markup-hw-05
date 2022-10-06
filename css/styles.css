@@ -16,6 +16,8 @@
     --socialicon-color: #AFB1B8;
     --socialicon-specialcolor: rgba(255, 255, 255, 0.1);
     --underimg-backgroundcolor: #C4C4C4;
+    --underposition-color: rgba(47, 48, 58, 0.8);
+    --underworks-color: rgba(33, 150, 243, 0.9);
 }
 body {
     font-family: 'Roboto', sans-serif;
@@ -77,6 +79,21 @@ div.container.main-nav {
     display: block;
     padding-top: 32px;
     padding-bottom: 32px;
+    position: relative;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.navmenu-item.current::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    height: 4px;
+    background-color: var(--special-color);
+    border-radius: 2px;
+    
 }
 .contact-item {
     display: flex;
@@ -88,11 +105,21 @@ div.container.main-nav {
     text-decoration: none;
     color: var(--secondary-textcolor);
     align-items: center;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .navmenu-item:hover,
 .contact-item:hover,
 .navmenu-item:focus,
-.contact-item:focus,
+.contact-item:focus {
+    font-weight: 500;
+    line-height: 1.14;
+    letter-spacing: 0.02em;
+    text-decoration: none;
+    color: var(--special-color);
+    
+}
 .navmenu-item.current {
     font-weight: 500;
     line-height: 1.14;
@@ -143,7 +170,7 @@ img {
     padding-top: 200px;
     padding-bottom: 200px;
     background-image: linear-gradient(to right, var(--overlaycolor), var(--overlaycolor)), url(../images/herophoto.jpg);
-    background-size: 1600px, cover;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
@@ -215,6 +242,9 @@ button {
     border-radius: 4px;
     padding: 10px 32px;
     margin-top: 30px;
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mainbutton:hover,
 .mainbutton:focus {
@@ -234,6 +264,10 @@ button {
     line-height: 1.63;
     letter-spacing: 0.03em; 
     color: var(--primary-textcolor);
+    box-shadow: none;
+    transition-property: background-color, color, box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .buttons-itembox:first-child {
     padding: 6px 25px;
@@ -282,7 +316,7 @@ button {
 */
 
 .section-image {
-
+    
 }
 .advantages {
     padding-top: 75px;
@@ -333,6 +367,23 @@ div.adv-with-titles {
 }
 .ourproducts-item:not(:last-child) {
     margin-right: 30px;
+}
+.ourproducts-item {
+    position: relative;
+}
+.ourproducts-title {
+    margin: 0;
+    position: absolute;
+    bottom: 0%;
+    display: block;
+    width: 370px;
+    justify-content: center;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: var(--underposition-color);
+    color: var(--additional-color);
+    padding-top: 27px;
+    padding-bottom: 27px;
 }
 .team {
     background-color: var(--button-backgroundcolor);
@@ -391,6 +442,9 @@ div.adv-with-titles {
     height: 44px;
     border-radius: 50%;
     fill: var(--socialicon-color);
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-a:hover,
 .social-a:focus {
@@ -413,6 +467,9 @@ div.adv-with-titles {
     border: 1px solid var(--socialicon-color);
     border-radius: 4px;
     fill: var(--socialicon-color);
+    transition-property: background-color, fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .clients-a:hover,
 .clients-a:focus {
@@ -436,11 +493,48 @@ div.adv-with-titles {
     display: block;
     text-decoration: none;
     color: var(--primary-textcolor);
+    position: relative;
+    box-shadow: none;
+    transition-property: box-shadow;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .works-with-titles:hover,
 .works-with-titles:focus {
     box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+.overlay {
+    margin-top: 0;
+    margin-bottom: 0;    
+    position: relative;
+    overflow: hidden;
+}
+.works-with-titlesoverlay {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.56;
+    letter-spacing: 0.03em;
+    text-align: left;
+    justify-content: center;
+    vertical-align: top;
+    color: var(--additional-color);
+    background-color: var(--underworks-color);
+    padding: 63px 24px;
+    position: absolute;
+    bottom: 0%;
+    transform: translateY(100%);
+    transition-property: transform;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    
+}
+.works-with-titles:hover .works-with-titlesoverlay,
+.works-with-titles:focus .works-with-titlesoverlay {
+    transform: translateY(0);
+}
+
 .titles-under-works {
     padding: 20px 24px;
     border-bottom: 1px solid var(--border-second-color);
@@ -499,6 +593,9 @@ div.adv-with-titles {
     font-style: normal;
     line-height: 1.71;
     letter-spacing: 0.03em;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-itemmap:hover,
 .adress-itemmap:focus {
@@ -516,6 +613,9 @@ div.adv-with-titles {
     line-height: 1.71;
     letter-spacing: 0.03em;
     color: var(--special-contactcolor);
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .adress-itemcontact:hover,
 .adress-itemcontact:focus {
@@ -556,6 +656,9 @@ div.adv-with-titles {
     border-radius: 50%;
     background-color: var(--socialicon-specialcolor);
     fill: var(--primary-backgroundcolor);
+    transition-property: background-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 .social-afuter:hover,
 .social-afuter:focus {
