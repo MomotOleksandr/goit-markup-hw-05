@@ -65,7 +65,7 @@
     <main>
     <section class="herobox">
         <h1 class="main-h">Ефективні рішення для вашого бізнесу</h1>
-        <button class="mainbutton" type="button">Замовити послугу</button>
+        <button class="mainbutton" type="button" data-modal-open>Замовити послугу</button>
     </section>
     <section class="advantages">
         <div class="container">
@@ -74,7 +74,7 @@
             <li class="advantages-item">
                 <div class="advantages-place-icon">
                     <svg  width="70" height="70" class="advantages-icon">
-                        <use class="ddd" href="./images/sprite.svg#icon-locator">
+                        <use href="./images/sprite.svg#icon-locator">
                         </use>
                     </svg>
                 </div>
@@ -426,6 +426,20 @@
         </div>
     </footer>
 
+    <!-- Модальне вікно -->
+    <div class="backdrop is-hidden" data-modal>
+        <div class="modal">
+            <button type="button" class="closemodal" data-modal-close>
+                <svg width="18" height="18" class="closemodal-icon">
+                    <use href="./images/sprite.svg#icon-closemodal">
+                    </use>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Підключення JS -->
+    <script src="./js/model.js"></script>
 </body>
 
 </html>
